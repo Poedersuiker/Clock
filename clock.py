@@ -8,9 +8,16 @@ import logging
 from waveshare_epd import epd4in2
 import time
 from PIL import Image,ImageDraw,ImageFont
+from svglib.svglib import svg2rlg
 import traceback
 
 logging.basicConfig(level=logging.DEBUG)
+
+# Load the SVG images using the 'svglib.svg2rlg()' function
+sunny = svg2rlg(os.path.join(picdir, 'wi-day-sunny.svg'))
+sunny.scale(1/8,1/8)
+sunny.width=200
+sunny.height=200
 
 try:
     logging.info("Starting the Clock")
@@ -44,8 +51,7 @@ try:
     time.sleep(3)
     
     #display 4Gra bmp
-    Himage = Image.open(os.path.join(picdir, 'wi-day-sunny.svg'))
-    epd.display_4Gray(epd.getbuffer_4Gray(Himage))
+    epd.display_4Gray(epd.getbuffer_4Gray(sunny))
     time.sleep(4)
     
     epd.Clear()
