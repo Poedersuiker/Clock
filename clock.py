@@ -44,7 +44,7 @@ try:
     time.sleep(3)
     
     #display 4Gra bmp
-    Himage = Image.open(os.path.join(picdir, '4in2_Scale_1.bmp'))
+    Himage = Image.open(os.path.join(picdir, 'wi-day-sunny.svg'))
     epd.display_4Gray(epd.getbuffer_4Gray(Himage))
     time.sleep(4)
     
