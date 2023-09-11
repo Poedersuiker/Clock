@@ -5,6 +5,7 @@ import os
 picdir = 'pic'
 
 import logging
+from io import BytesIO
 from waveshare_epd import epd4in2
 import time
 from PIL import Image,ImageDraw,ImageFont
