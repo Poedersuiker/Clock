@@ -14,9 +14,8 @@ import traceback
 logging.basicConfig(level=logging.DEBUG)
 
 # Load the SVG images using the 'svglib.svg2rlg()' function
-svg_data = open(os.path.join(picdir, 'wi-day-sunny.svg'))
-sunny_png = svg2png(bytestring=svg_data)
-sunny = Image.open(BytesIO(png))
+sunny_png = svg2png(bytestring=open(os.path.join(picdir, 'wi-day-sunny.svg')).read().encode('utf-8'))
+sunny = Image.open(BytesIO(sunny_png))
 
 try:
     logging.info("Starting the Clock")
