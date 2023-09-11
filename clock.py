@@ -36,6 +36,7 @@ try:
     
     Limage = Image.new('L', (epd.width, epd.height), 0)  # 255: clear the frame
     draw = ImageDraw.Draw(Limage)
+    draw.paste(icon, (300, 150))
     draw.text((20, 0), u'Test Gray1', font = font35, fill = epd.GRAY1)
     draw.text((20, 35), u'Test Gray2', font = font35, fill = epd.GRAY2)
     draw.text((20, 70), u'Test Gray3', font = font35, fill = epd.GRAY3)
@@ -50,11 +51,6 @@ try:
     epd.display_4Gray(epd.getbuffer_4Gray(Limage))
     time.sleep(3)
     
-    #display 4Gra bmp
-    epd.display_4Gray(epd.getbuffer_4Gray(sunny))
-    time.sleep(4)
-    
-    epd.Clear()
     logging.info("Goto Sleep...")
     epd.sleep()
     
