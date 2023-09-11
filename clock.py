@@ -14,7 +14,8 @@ import traceback
 logging.basicConfig(level=logging.DEBUG)
 
 # Load the SVG images using the 'svglib.svg2rlg()' function
-sunny_png = svg2png(os.path.join(picdir, 'wi-day-sunny.svg'))
+svg_data = open(os.path.join(picdir, 'wi-day-sunny.svg'))
+sunny_png = svg2png(bytestring=svg_data)
 sunny = Image.open(BytesIO(png))
 
 try:
