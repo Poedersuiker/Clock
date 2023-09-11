@@ -36,7 +36,7 @@ try:
     
     ScreenImage = Image.new('L', (epd.width, epd.height), 0)  # 255: clear the frame
     draw = ImageDraw.Draw(ScreenImage)
-    ScreenImage.paste(sunny, (300, 150, 50, 50))
+    ScreenImage.paste(sunny, (300, 150, 50, 50), stroke_fill=epd.GRAY3)
     draw.text((20, 0), u'Test Gray1', font = font35, fill = epd.GRAY1)
     draw.text((20, 35), u'Test Gray2', font = font35, fill = epd.GRAY2)
     draw.text((20, 70), u'Test Gray3', font = font35, fill = epd.GRAY3)
