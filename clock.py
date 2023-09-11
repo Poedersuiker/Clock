@@ -33,7 +33,7 @@ try:
     logging.info("Init Grayscale")
     epd.Init_4Gray()
     
-    ScreenImage = Image.new('L', (epd.width, epd.height), 0)  # 255: clear the frame
+    ScreenImage = Image.new('L', (epd.width, epd.height), 255)  # 255: clear the frame
     
     draw = ImageDraw.Draw(ScreenImage)
     
