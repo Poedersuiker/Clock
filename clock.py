@@ -36,7 +36,7 @@ try:
     
     Limage = Image.new('L', (epd.width, epd.height), 0)  # 255: clear the frame
     draw = ImageDraw.Draw(Limage)
-    Limage.paste(icon, (300, 150))
+    Limage.paste(sunny, (300, 150))
     draw.text((20, 0), u'Test Gray1', font = font35, fill = epd.GRAY1)
     draw.text((20, 35), u'Test Gray2', font = font35, fill = epd.GRAY2)
     draw.text((20, 70), u'Test Gray3', font = font35, fill = epd.GRAY3)
