@@ -8,18 +8,14 @@ import logging
 from waveshare_epd import epd4in2
 import time
 from PIL import Image,ImageDraw,ImageFont
-from svglib.svglib import svg2rlg
-from reportlab.graphics.renderPM import drawToPIL, Drawing
+from cairosvg import svg2png
 import traceback
 
 logging.basicConfig(level=logging.DEBUG)
 
 # Load the SVG images using the 'svglib.svg2rlg()' function
-sunny = svg2rlg(os.path.join(picdir, 'wi-day-sunny.svg'))
-sunny.scale(1/8,1/8)
-sunny.width=200
-sunny.height=200
-sunny = drawToPIL(sunny)
+sunny_png = svg2png(os.path.join(picdir, 'wi-day-sunny.svg'))
+sunny = Image.open(BytesIO(png))
 
 try:
     logging.info("Starting the Clock")
@@ -41,6 +37,7 @@ try:
     draw = ImageDraw.Draw(ScreenImage)
     
     ScreenImage.paste(sunny, (300, 150))
+    
     draw.text((20, 0), u'Test Gray1', font = font35, fill = epd.GRAY1)
     draw.text((20, 35), u'Test Gray2', font = font35, fill = epd.GRAY2)
     draw.text((20, 70), u'Test Gray3', font = font35, fill = epd.GRAY3)
