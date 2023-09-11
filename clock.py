@@ -34,9 +34,9 @@ try:
     logging.info("Init Grayscale")
     epd.Init_4Gray()
     
-    Limage = Image.new('L', (epd.width, epd.height), 0)  # 255: clear the frame
-    draw = ImageDraw.Draw(Limage)
-    Limage.paste(sunny, (300, 150))
+    ScreenImage = Image.new('L', (epd.width, epd.height), 0)  # 255: clear the frame
+    draw = ImageDraw.Draw(ScreenImage)
+    ScreenImage.paste(sunny, (300, 150, 50, 50))
     draw.text((20, 0), u'Test Gray1', font = font35, fill = epd.GRAY1)
     draw.text((20, 35), u'Test Gray2', font = font35, fill = epd.GRAY2)
     draw.text((20, 70), u'Test Gray3', font = font35, fill = epd.GRAY3)
@@ -48,7 +48,7 @@ try:
     draw.arc((70, 140, 120, 190), 0, 360, fill = epd.GRAY1)
     draw.rectangle((10, 200, 60, 250), fill = epd.GRAY1)
     draw.chord((70, 200, 120, 250), 0, 360, fill = epd.GRAY1)
-    epd.display_4Gray(epd.getbuffer_4Gray(Limage))
+    epd.display_4Gray(epd.getbuffer_4Gray(ScreenImage))
     time.sleep(3)
     
     logging.info("Goto Sleep...")
