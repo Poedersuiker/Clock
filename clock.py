@@ -9,14 +9,19 @@ from io import BytesIO
 from waveshare_epd import epd4in2
 import time
 from PIL import Image,ImageDraw,ImageFont
-from cairosvg import svg2png
+import svglib.svg2py
 import traceback
 
 logging.basicConfig(level=logging.DEBUG)
 
-# Load the SVG images using the 'svglib.svg2rlg()' function
-sunny_png = svg2png(bytestring=open(os.path.join(picdir, 'wi-day-sunny.svg')).read().encode('utf-8'))
-sunny = Image.open(BytesIO(sunny_png))
+# SVG test
+width = 50
+height = 50
+sunny_svg = svglib.svg2py.SVG(os.path.join(picdir, 'wi-day-sunny.svg'))
+sunny = PIL.Image.new('1', (width, height))
+# Iterate over the SVG elements and draw them to the PNG image.
+for element in sunny_svg.get_elements():
+    element.draw(sunny)
 
 try:
     logging.info("Starting the Clock")
