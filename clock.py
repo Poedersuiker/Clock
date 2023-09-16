@@ -39,7 +39,7 @@ try:
 
     # Draw the time line on top (with space for the times above
     draw.rectangle((0, 20, 400, 23), fill=255)
-    draw.text((20, 2), u'9:00', font=font18, fill=255)
+    draw.text((9, 2), u'9:00', font=font18, fill=255)
     draw.rectangle((5, 15, 8, 35), fill=255)
     ScreenImage.paste(sunny, (8, 24))
 
