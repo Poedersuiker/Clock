@@ -5,7 +5,7 @@ import os
 import logging
 from waveshare_epd import epd4in2
 import time
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 
 picdir = 'pic'
@@ -30,6 +30,7 @@ try:
 
     sunny = Image.open(os.path.join(picdir, 'sunny.bmp'))
     sunny.convert("1")
+    sunny.ImageOps.invert(sunny)
     ScreenImage.paste(sunny, (200, 150))
 
     draw.text((20, 0), u'Test Black', font=font35, fill=0)
