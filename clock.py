@@ -41,7 +41,7 @@ try:
     draw.rectangle((10, 200, 60, 250), fill=0)
     draw.chord((70, 200, 120, 250), 0, 360, fill=0)
     ScreenImage.paste(sunny, (200, 150))
-    epd.display_4Gray(epd.getbuffer_4Gray(ScreenImage))
+    epd.display_4Gray(epd.getbuffer_4Gray(sunny))
     time.sleep(3)
     
     logging.info("Goto Sleep...")
