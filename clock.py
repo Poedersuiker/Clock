@@ -24,25 +24,31 @@ try:
     font18 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 18)
     font35 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 35)
     
-    ScreenImage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
+    # Create a Black background (0 instead of 255)
+    ScreenImage = Image.new('1', (epd.width, epd.height), 0)  # 255: clear the frame
     
+    # initiate the Drawing tool
     draw = ImageDraw.Draw(ScreenImage)
 
+    # load the sunny icon
     sunny = Image.open(os.path.join(picdir, 'sunny.bmp'))
     if sunny.mode != 'L':
         sunny = sunny.convert('L')
     sunny = ImageOps.invert(sunny)
     sunny = sunny.convert("1")
-    ScreenImage.paste(sunny, (200, 150))
 
-    draw.text((20, 0), u'Test Black', font=font35, fill=0)
+    # Draw the time line on top (with space for the times above
+    draw.line((20, 0, 22, 400), fill=255)
+    '''draw.text((20, 0), u'Test Black', font=font35, fill=0)
     draw.line((10, 140, 60, 190), fill=0)
     draw.line((60, 140, 10, 190), fill=0)
     draw.rectangle((10, 140, 60, 190), outline=0)
     draw.line((95, 140, 95, 190), fill=0)
     draw.line((70, 165, 120, 165), fill=0)
-    draw.arc((70, 140, 120, 190), 0, 360, fill=0)
-    draw.rectangle((10, 200, 60, 250), fill=0)
+    draw.arc((70, 140, 120, 190), 0, 360, fill=0)'''
+
+    ScreenImage.paste(sunny, (200, 150))
+
     draw.chord((70, 200, 120, 250), 0, 360, fill=0)
     epd.display(epd.getbuffer(ScreenImage))
     time.sleep(3)
