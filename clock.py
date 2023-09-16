@@ -30,7 +30,7 @@ try:
 
     sunny = Image.open(os.path.join(picdir, 'sunny.bmp'))
     sunny.convert("1")
-    sunny.ImageOps.invert(sunny)
+    sunny = ImageOps.invert(sunny)
     ScreenImage.paste(sunny, (200, 150))
 
     draw.text((20, 0), u'Test Black', font=font35, fill=0)
