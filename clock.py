@@ -30,7 +30,7 @@ try:
 
     sunny = Image.open(os.path.join(picdir, 'sunny.png'))
     sunny.convert("1")
-    ScreenImage.paste(sunny, (300, 150))
+    ScreenImage.paste(sunny, (200, 150))
     
     draw.text((20, 0), u'Test Black', font=font35, fill=0)
     draw.line((10, 140, 60, 190), fill=0)
