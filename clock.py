@@ -2,26 +2,15 @@
 # -*- coding:utf-8 -*-
 import sys
 import os
-picdir = 'pic'
-
 import logging
-from io import BytesIO
 from waveshare_epd import epd4in2
 import time
-from PIL import Image,ImageDraw,ImageFont
-import svglib.svg2py
-import traceback
+from PIL import Image, ImageDraw, ImageFont
+
+
+picdir = 'pic'
 
 logging.basicConfig(level=logging.DEBUG)
-
-# SVG test
-width = 50
-height = 50
-sunny_svg = svglib.svg2py.SVG(os.path.join(picdir, 'wi-day-sunny.svg'))
-sunny = PIL.Image.new('1', (width, height))
-# Iterate over the SVG elements and draw them to the PNG image.
-for element in sunny_svg.get_elements():
-    element.draw(sunny)
 
 try:
     logging.info("Starting the Clock")
@@ -41,7 +30,7 @@ try:
     ScreenImage = Image.new('L', (epd.width, epd.height), 255)  # 255: clear the frame
     
     draw = ImageDraw.Draw(ScreenImage)
-    
+    sunny = Image.open(os.path.join(picdir, 'sunny.png'))
     ScreenImage.paste(sunny, (300, 150))
     
     draw.text((20, 0), u'Test Gray1', font = font35, fill = epd.GRAY1)
