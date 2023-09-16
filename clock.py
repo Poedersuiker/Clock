@@ -38,7 +38,7 @@ try:
     sunny = sunny.convert("1")
 
     # Draw the time line on top (with space for the times above
-    draw.line((20, 0, 22, 400), fill=255)
+    draw.line((0, 20, 400, 25), fill=255)
     '''draw.text((20, 0), u'Test Black', font=font35, fill=0)
     draw.line((10, 140, 60, 190), fill=0)
     draw.line((60, 140, 10, 190), fill=0)
