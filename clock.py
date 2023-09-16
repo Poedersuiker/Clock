@@ -21,7 +21,7 @@ try:
     epd.Clear()
 
     font18 = ImageFont.truetype(os.path.join(picdir, 'NixieOne.ttf'), 18)
-    fontClock = ImageFont.truetype(os.path.join(picdir, 'SevenSegment.ttf'), 175)
+    fontClock = ImageFont.truetype(os.path.join(picdir, '7segment.ttf'), 175)
     font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
     font35 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 35)
     
@@ -57,6 +57,7 @@ try:
     ScreenImage.paste(sunny, (308, 24))
 
     draw.text((10, 100), u'24:00', font=fontClock, fill=255)
+    draw.tex
 
     '''draw.text((20, 0), u'Test Black', font=font35, fill=0)
     draw.line((10, 140, 60, 190), fill=0)
