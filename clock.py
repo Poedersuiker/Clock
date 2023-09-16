@@ -30,8 +30,7 @@ try:
 
     sunny = Image.open(os.path.join(picdir, 'sunny.png'))
     sunny.convert("1")
-    ScreenImage.paste(sunny, (200, 150))
-    
+
     draw.text((20, 0), u'Test Black', font=font35, fill=0)
     draw.line((10, 140, 60, 190), fill=0)
     draw.line((60, 140, 10, 190), fill=0)
@@ -41,6 +40,7 @@ try:
     draw.arc((70, 140, 120, 190), 0, 360, fill=0)
     draw.rectangle((10, 200, 60, 250), fill=0)
     draw.chord((70, 200, 120, 250), 0, 360, fill=0)
+    ScreenImage.paste(sunny, (200, 150))
     epd.display_4Gray(epd.getbuffer_4Gray(ScreenImage))
     time.sleep(3)
     
