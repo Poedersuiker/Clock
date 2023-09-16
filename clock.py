@@ -29,8 +29,10 @@ try:
     draw = ImageDraw.Draw(ScreenImage)
 
     sunny = Image.open(os.path.join(picdir, 'sunny.bmp'))
-    sunny.convert("1")
+    if sunny.mode != 'L':
+        image = sunny.convert('L')
     sunny = ImageOps.invert(sunny)
+    sunny.convert("1")
     ScreenImage.paste(sunny, (200, 150))
 
     draw.text((20, 0), u'Test Black', font=font35, fill=0)
