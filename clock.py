@@ -21,7 +21,7 @@ try:
     epd.Clear()
 
     font18 = ImageFont.truetype(os.path.join(picdir, 'NixieOne.ttf'), 18)
-    fontClock = ImageFont.truetype(os.path.join(picdir, 'SevenSegment.ttf'), 200)
+    fontClock = ImageFont.truetype(os.path.join(picdir, 'SevenSegment.ttf'), 175)
     font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
     font35 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 35)
     
