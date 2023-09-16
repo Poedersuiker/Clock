@@ -24,27 +24,23 @@ try:
     font18 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 18)
     font35 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 35)
     
-    logging.info("Init Grayscale")
-    epd.Init_4Gray()
-    
-    ScreenImage = Image.new('L', (epd.width, epd.height), 255)  # 255: clear the frame
+    ScreenImage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
     
     draw = ImageDraw.Draw(ScreenImage)
+
     sunny = Image.open(os.path.join(picdir, 'sunny.png'))
-    sunny.convert("L")
+    sunny.convert("1")
     ScreenImage.paste(sunny, (300, 150))
     
-    draw.text((20, 0), u'Test Gray1', font = font35, fill = epd.GRAY1)
-    draw.text((20, 35), u'Test Gray2', font = font35, fill = epd.GRAY2)
-    draw.text((20, 70), u'Test Gray3', font = font35, fill = epd.GRAY3)
-    draw.line((10, 140, 60, 190), fill = epd.GRAY1)
-    draw.line((60, 140, 10, 190), fill = epd.GRAY1)
-    draw.rectangle((10, 140, 60, 190), outline = epd.GRAY1)
-    draw.line((95, 140, 95, 190), fill = epd.GRAY1)
-    draw.line((70, 165, 120, 165), fill = epd.GRAY1)
-    draw.arc((70, 140, 120, 190), 0, 360, fill = epd.GRAY1)
-    draw.rectangle((10, 200, 60, 250), fill = epd.GRAY1)
-    draw.chord((70, 200, 120, 250), 0, 360, fill = epd.GRAY1)
+    draw.text((20, 0), u'Test Black', font=font35, fill=0)
+    draw.line((10, 140, 60, 190), fill=0)
+    draw.line((60, 140, 10, 190), fill=0)
+    draw.rectangle((10, 140, 60, 190), outline=0)
+    draw.line((95, 140, 95, 190), fill=0)
+    draw.line((70, 165, 120, 165), fill=0)
+    draw.arc((70, 140, 120, 190), 0, 360, fill=0)
+    draw.rectangle((10, 200, 60, 250), fill=0)
+    draw.chord((70, 200, 120, 250), 0, 360, fill=0)
     epd.display_4Gray(epd.getbuffer_4Gray(ScreenImage))
     time.sleep(3)
     
