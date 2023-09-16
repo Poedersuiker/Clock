@@ -41,7 +41,7 @@ try:
     draw.arc((70, 140, 120, 190), 0, 360, fill=0)
     draw.rectangle((10, 200, 60, 250), fill=0)
     draw.chord((70, 200, 120, 250), 0, 360, fill=0)
-    epd.display_4Gray(epd.getbuffer(ScreenImage))
+    epd.display(epd.getbuffer(ScreenImage))
     time.sleep(3)
     
     logging.info("Goto Sleep...")
