@@ -57,7 +57,6 @@ try:
     ScreenImage.paste(sunny, (308, 24))
 
     draw.text((10, 100), u'24:00', font=fontClock, fill=255)
-    draw.tex
 
     '''draw.text((20, 0), u'Test Black', font=font35, fill=0)
     draw.line((10, 140, 60, 190), fill=0)
