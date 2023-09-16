@@ -31,7 +31,7 @@ try:
     
     draw = ImageDraw.Draw(ScreenImage)
     sunny = Image.open(os.path.join(picdir, 'sunny.png'))
-    sunny.convert("1")
+    sunny.convert("L")
     ScreenImage.paste(sunny, (300, 150))
     
     draw.text((20, 0), u'Test Gray1', font = font35, fill = epd.GRAY1)
