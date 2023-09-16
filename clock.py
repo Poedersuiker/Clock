@@ -39,6 +39,8 @@ try:
 
     # Draw the time line on top (with space for the times above
     draw.rectangle((0, 20, 400, 23), fill=255)
+    draw.rectangle((5, 24, 8, 30), fill=255)
+
     '''draw.text((20, 0), u'Test Black', font=font35, fill=0)
     draw.line((10, 140, 60, 190), fill=0)
     draw.line((60, 140, 10, 190), fill=0)
