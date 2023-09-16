@@ -40,6 +40,7 @@ try:
     # Draw the time line on top (with space for the times above
     draw.rectangle((0, 20, 400, 23), fill=255)
     draw.rectangle((5, 15, 8, 35), fill=255)
+    ScreenImage.paste(sunny, (8, 23))
 
     '''draw.text((20, 0), u'Test Black', font=font35, fill=0)
     draw.line((10, 140, 60, 190), fill=0)
@@ -49,7 +50,6 @@ try:
     draw.line((70, 165, 120, 165), fill=0)
     draw.arc((70, 140, 120, 190), 0, 360, fill=0)'''
 
-    ScreenImage.paste(sunny, (200, 150))
 
     draw.chord((70, 200, 120, 250), 0, 360, fill=0)
     epd.display(epd.getbuffer(ScreenImage))
