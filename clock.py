@@ -43,6 +43,18 @@ try:
     draw.rectangle((5, 15, 8, 35), fill=255)
     ScreenImage.paste(sunny, (8, 24))
 
+    draw.text((109, 2), u'12:00', font=font18, fill=255)
+    draw.rectangle((105, 15, 108, 35), fill=255)
+    ScreenImage.paste(sunny, (108, 24))
+
+    draw.text((209, 2), u'15:00', font=font18, fill=255)
+    draw.rectangle((205, 15, 208, 35), fill=255)
+    ScreenImage.paste(sunny, (208, 24))
+
+    draw.text((309, 2), u'18:00', font=font18, fill=255)
+    draw.rectangle((305, 15, 308, 35), fill=255)
+    ScreenImage.paste(sunny, (308, 24))
+
     '''draw.text((20, 0), u'Test Black', font=font35, fill=0)
     draw.line((10, 140, 60, 190), fill=0)
     draw.line((60, 140, 10, 190), fill=0)
