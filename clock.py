@@ -16,15 +16,15 @@ logging.basicConfig(level=logging.DEBUG)
 logging.info("Starting the Clock")
 
 # load icons
-icons = {'01n': Image.open(os.path.join(picdir, '01.bmp')), '01b': Image.open(os.path.join(picdir, '01.bmp')),
-         '02n': Image.open(os.path.join(picdir, '02.bmp')), '02b': Image.open(os.path.join(picdir, '02.bmp')),
-         '03n': Image.open(os.path.join(picdir, '03.bmp')), '03b': Image.open(os.path.join(picdir, '03.bmp')),
-         '04n': Image.open(os.path.join(picdir, '04.bmp')), '04b': Image.open(os.path.join(picdir, '04.bmp')),
-         '09n': Image.open(os.path.join(picdir, '09.bmp')), '09b': Image.open(os.path.join(picdir, '09.bmp')),
-         '10n': Image.open(os.path.join(picdir, '10.bmp')), '10b': Image.open(os.path.join(picdir, '10.bmp')),
-         '11n': Image.open(os.path.join(picdir, '11.bmp')), '11b': Image.open(os.path.join(picdir, '11.bmp')),
-         '13n': Image.open(os.path.join(picdir, '13.bmp')), '13b': Image.open(os.path.join(picdir, '13.bmp')),
-         '50n': Image.open(os.path.join(picdir, '50.bmp')), '50b': Image.open(os.path.join(picdir, '50.bmp'))}
+icons = {'01n': Image.open(os.path.join(picdir, '01.bmp')), '01d': Image.open(os.path.join(picdir, '01.bmp')),
+         '02n': Image.open(os.path.join(picdir, '02.bmp')), '02d': Image.open(os.path.join(picdir, '02.bmp')),
+         '03n': Image.open(os.path.join(picdir, '03.bmp')), '03d': Image.open(os.path.join(picdir, '03.bmp')),
+         '04n': Image.open(os.path.join(picdir, '04.bmp')), '04d': Image.open(os.path.join(picdir, '04.bmp')),
+         '09n': Image.open(os.path.join(picdir, '09.bmp')), '09d': Image.open(os.path.join(picdir, '09.bmp')),
+         '10n': Image.open(os.path.join(picdir, '10.bmp')), '10d': Image.open(os.path.join(picdir, '10.bmp')),
+         '11n': Image.open(os.path.join(picdir, '11.bmp')), '11d': Image.open(os.path.join(picdir, '11.bmp')),
+         '13n': Image.open(os.path.join(picdir, '13.bmp')), '13d': Image.open(os.path.join(picdir, '13.bmp')),
+         '50n': Image.open(os.path.join(picdir, '50.bmp')), '50d': Image.open(os.path.join(picdir, '50.bmp'))}
 
 for key in icons:
     if icons[key].mode != 'L':
