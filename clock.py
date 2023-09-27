@@ -58,9 +58,9 @@ def update_screen():
         epd.init()
         epd.Clear()
 
-        font18 = ImageFont.truetype(os.path.join(picdir, 'NixieOne.ttf'), 18)
+        font18 = ImageFont.truetype(os.path.join(picdir, '7segment.ttf'), 18)
         fontClock = ImageFont.truetype(os.path.join(picdir, '7segment.ttf'), 175)
-        font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
+        font24 = ImageFont.truetype(os.path.join(picdir, '7segment.ttf'), 24)
         font35 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 35)
 
         # Create a Black background (0 instead of 255)
@@ -74,22 +74,22 @@ def update_screen():
         draw.text((9, 2), weather_data['list'][0]['dt_txt'][11:][:5], font=font18, fill=255)
         draw.rectangle((5, 15, 8, 35), fill=255)
         ScreenImage.paste(icons[weather_data['list'][0]['weather'][0]['icon']], (8, 24))
-        draw.text((58, 30), str(round(weather_data['list'][0]['main']['temp'])), font=font18, fill=255)
+        draw.text((58, 30), str(round(weather_data['list'][0]['main']['temp'])), font=font24, fill=255)
 
         draw.text((109, 2), weather_data['list'][1]['dt_txt'][11:][:5], font=font18, fill=255)
         draw.rectangle((105, 15, 108, 35), fill=255)
         ScreenImage.paste(icons[weather_data['list'][1]['weather'][0]['icon']], (108, 24))
-        draw.text((158, 30), str(round(weather_data['list'][1]['main']['temp'])), font=font18, fill=255)
+        draw.text((158, 30), str(round(weather_data['list'][1]['main']['temp'])), font=font24, fill=255)
 
         draw.text((209, 2), weather_data['list'][2]['dt_txt'][11:][:5], font=font18, fill=255)
         draw.rectangle((205, 15, 208, 35), fill=255)
         ScreenImage.paste(icons[weather_data['list'][2]['weather'][0]['icon']], (208, 24))
-        draw.text((258, 30), str(round(weather_data['list'][2]['main']['temp'])), font=font18, fill=255)
+        draw.text((258, 30), str(round(weather_data['list'][2]['main']['temp'])), font=font24, fill=255)
 
         draw.text((309, 2), weather_data['list'][3]['dt_txt'][11:][:5], font=font18, fill=255)
         draw.rectangle((305, 15, 308, 35), fill=255)
         ScreenImage.paste(icons[weather_data['list'][3]['weather'][0]['icon']], (308, 24))
-        draw.text((358, 30), str(round(weather_data['list'][3]['main']['temp'])), font=font18, fill=255)
+        draw.text((358, 30), str(round(weather_data['list'][3]['main']['temp'])), font=font24, fill=255)
 
         draw.text((10, 100), timestamp, font=fontClock, fill=255)
 
