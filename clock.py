@@ -1,9 +1,9 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 import sys
 import os
 import logging
-from waveshare_epd import epd4in2
+from waveshare_epd import EPD, module_exit
 import time
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 import requests
@@ -53,7 +53,7 @@ def update_screen():
     timestamp = time.strftime('%H:%M')
 
     try:
-        epd = epd4in2.EPD()
+        epd = EPD()
         logging.info("init and Clear")
         epd.init()
         epd.Clear()
@@ -113,7 +113,7 @@ def update_screen():
 
     except KeyboardInterrupt:
         logging.info("ctrl + c:")
-        epd4in2.epdconfig.module_exit()
+        module_exit()
         exit()
 
 
